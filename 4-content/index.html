@@ -456,9 +456,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-apps-and-instantiating-apps-in-cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding apps and instantiating apps in CS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-greeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      The greeting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#before-going-live" class="md-nav__link">
     <span class="md-ellipsis">
       Before Going Live
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancing-the-cs-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancing the CS template
     </span>
   </a>
   
@@ -637,9 +664,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-apps-and-instantiating-apps-in-cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding apps and instantiating apps in CS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-greeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      The greeting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#before-going-live" class="md-nav__link">
     <span class="md-ellipsis">
       Before Going Live
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancing-the-cs-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancing the CS template
     </span>
   </a>
   
@@ -724,13 +778,43 @@ looks like:</p>
 <h3 id="writing-live-the-mkdocs">Writing live the MKDocs<a class="headerlink" href="#writing-live-the-mkdocs" title="Permanent link">#</a></h3>
 <p>This codespace has in the <code>postCreate.sh</code> the function <code>installMkdocs</code> which installs <code>runme</code> and the <code>mkdocs</code>. This will publish automatically the mkdocs so you can see in an instant the changes. </p>
 <p>In the <code>postStart.sh</code> file the MKDocs will be exposed with the function <code>exposeMkdocs</code>. This function exposes the mkdocs in the port 8000. Before going live you should comment out both funtions for two reasons, 1.- you'll improve the rampup time of all the containers created for your session and 2.- you dont want your users to go to the local copy of the labguide but to the one in the internet so we can monitor all user interactions with your lab guide. </p>
-<p>To watch the local mkdocs just go to the terminal and see the process exposed in port 8000. </p>
+<p>To watch the local mkdocs just go to the terminal and see the process exposed in port 8000.</p>
+<p>When you call it it should look something like this:</p>
+<div class="highlight"><pre><span></span><code>@sergiohinojosa<span class="w"> </span>➜<span class="w"> </span>/workspaces/enablement-codespaces-template<span class="w"> </span><span class="o">(</span>main<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>deployGhdocs<span class="w"> </span>
+INFO<span class="w">    </span>-<span class="w">  </span>Cleaning<span class="w"> </span>site<span class="w"> </span>directory
+INFO<span class="w">    </span>-<span class="w">  </span>Building<span class="w"> </span>documentation<span class="w"> </span>to<span class="w"> </span>directory:<span class="w"> </span>/workspaces/enablement-codespaces-template/site
+INFO<span class="w">    </span>-<span class="w">  </span>The<span class="w"> </span>following<span class="w"> </span>pages<span class="w"> </span>exist<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>docs<span class="w"> </span>directory,<span class="w"> </span>but<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>included<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;nav&quot;</span><span class="w"> </span>configuration:
+<span class="w">             </span>-<span class="w"> </span>snippets/admonitions.md
+<span class="w">             </span>-<span class="w"> </span>snippets/disclaimer.md
+<span class="w">             </span>-<span class="w"> </span>snippets/grail-requirements.md
+<span class="w">             </span>-<span class="w"> </span>snippets/view-code.md
+INFO<span class="w">    </span>-<span class="w">  </span>Documentation<span class="w"> </span>built<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.31<span class="w"> </span>seconds
+INFO<span class="w">    </span>-<span class="w">  </span>Copying<span class="w"> </span><span class="s1">&#39;/workspaces/enablement-codespaces-template/site&#39;</span><span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;gh-pages&#39;</span><span class="w"> </span>branch<span class="w"> </span>and<span class="w"> </span>pushing<span class="w"> </span>to<span class="w"> </span>GitHub.
+Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">61</span>,<span class="w"> </span><span class="k">done</span>.
+Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">61</span>/61<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Delta<span class="w"> </span>compression<span class="w"> </span>using<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span><span class="m">2</span><span class="w"> </span>threads
+Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">21</span>/21<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Writing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">33</span>/33<span class="o">)</span>,<span class="w"> </span><span class="m">1</span>.31<span class="w"> </span>MiB<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.24<span class="w"> </span>MiB/s,<span class="w"> </span><span class="k">done</span>.
+Total<span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">15</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>from<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+remote:<span class="w"> </span>Resolving<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">15</span>/15<span class="o">)</span>,<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="nb">local</span><span class="w"> </span>objects.
+To<span class="w"> </span>https://github.com/dynatrace-wwse/enablement-codespaces-template
+<span class="w">   </span>bca482c..db42f7f<span class="w">  </span>gh-pages<span class="w"> </span>-&gt;<span class="w"> </span>gh-pages
+INFO<span class="w">    </span>-<span class="w">  </span>Your<span class="w"> </span>documentation<span class="w"> </span>should<span class="w"> </span>shortly<span class="w"> </span>be<span class="w"> </span>available<span class="w"> </span>at:<span class="w"> </span>https://dynatrace-wwse.github.io/enablement-codespaces-template/
+</code></pre></div>
+<p>Make sure that there is no warning in there, if there is a warning is because most likely you are referencing a page or an image that is missing or wrong.</p>
 <h3 id="deploying-the-github-pages">Deploying the Github pages.<a class="headerlink" href="#deploying-the-github-pages" title="Permanent link">#</a></h3>
 <p>For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called <code>deployGhdocs</code>. Before calling it, be sure that you have commited your changes to origin/main. </p>
+<h2 id="adding-apps-and-instantiating-apps-in-cs">Adding apps and instantiating apps in CS<a class="headerlink" href="#adding-apps-and-instantiating-apps-in-cs" title="Permanent link">#</a></h2>
+<p>The architec</p>
+<h2 id="the-greeting">The greeting<a class="headerlink" href="#the-greeting" title="Permanent link">#</a></h2>
+<p>The cool Dynatrace message is nothing else but echos in a function which are loaded in the user shell, in this case we are using an image with <code>zsh</code>. If you want to modify the greeting, this file is under ```.devcontainer/greeting.sh````</p>
+<p>Just by typing <code>zsh</code> a new terminal is created and you'll see your changes. Be aware that we want to keep consistency in all trainings, so don't change the template too much.</p>
 <h2 id="before-going-live">Before Going Live<a class="headerlink" href="#before-going-live" title="Permanent link">#</a></h2>
-<p>As you can see, this MD file has a header-1 that is overriding the snippets/3-codespaces.js. Now, if you take it away, the header from the MKdocs.yaml file will appear. I recommend to be consistent and use the one from the MKDocs. More about this below</p>
-<p>This is the checklist to make sure everything runs smmothly</p>
-<p>More content!</p>
+<p>Make sure to install the plugin Todo Tree. This is a great plugin for tracking TODOs in repositories. I've added a couple of TODOs that you'll need to take care before going live. </p>
+<h2 id="enhancing-the-cs-template">Enhancing the CS template<a class="headerlink" href="#enhancing-the-cs-template" title="Permanent link">#</a></h2>
+<p>Multiple ways to collaborate:
+- You can create a Fork and add a PR. 
+- Add an issue directly in the Github repository. I have tons of enhancements in my head, but you can help me prioritize them so your work is more effective. Let's work together.</p>
 <div class="grid cards">
 <ul>
 <li><a href="../cleanup/">Let's continue<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
