@@ -40,11 +40,12 @@
     
   <!-- Add scripts that need to run afterwards here -->
    Create an agentless RUM application before GoLive
-   <!-- TODO: Replace Agentless RUM Snippet
-    1. Create an agentless application in Dynatrace
-    2. Replace this snippet with your RUM Snippet
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
     <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
     -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/bf64904yne/6c910e7a6d2a6ab4_complete.js" crossorigin="anonymous"></script>
 
     
       
@@ -386,9 +387,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#another-menu" class="md-nav__link">
+  <a href="#how-mkdocs-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Another menu
+      How MKdocs work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How MKdocs work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snippets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headings-in-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headings in MKDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-live-the-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing live the MKDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying the Github pages.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-going-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before Going Live
     </span>
   </a>
   
@@ -498,9 +568,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#another-menu" class="md-nav__link">
+  <a href="#how-mkdocs-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Another menu
+      How MKdocs work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How MKdocs work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snippets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headings-in-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headings in MKDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-live-the-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing live the MKDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploying the Github pages.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-going-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before Going Live
     </span>
   </a>
   
@@ -533,12 +672,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <h2 id="enablement-content">Enablement content<a class="headerlink" href="#enablement-content" title="Permanent link">#</a></h2>
 <p>In here you put your enablement content after Codespaces has been started and everything is ready and set-up.</p>
-<p>Adding a snippet on how to view the code:</p>
+<h2 id="how-mkdocs-work">How MKdocs work<a class="headerlink" href="#how-mkdocs-work" title="Permanent link">#</a></h2>
+<p>All the MD files are under the <strong>docs</strong> folder. In the main README.md file you want to give an intro on what the tutorial is about, being very short and to the point. If you add images there you reference them to doc/img folder.</p>
+<h3 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">#</a></h3>
+<p>Snippets allow you to reuse text, banners, code or pieces of code.</p>
+<p>This is a snippet with an admonition:</p>
 <div class="admonition tip">
 <p class="admonition-title">View the Code</p>
 <p>The code for this repository is hosted on GitHub. Click the "View Code on GitHub" link above.</p>
 </div>
-<h2 id="another-menu">Another menu<a class="headerlink" href="#another-menu" title="Permanent link">#</a></h2>
+<h3 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">#</a></h3>
+<p>This is a warning admonition
+<div class="highlight"><pre><span></span><code>!!!<span class="w"> </span>warning<span class="w"> </span><span class="s2">&quot;Warning&quot;</span>
+<span class="w">    </span>This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>Warning<span class="w"> </span>
+</code></pre></div>
+looks like:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a Warning </p>
+</div>
+<p>This are the available admonitions added with a snippet:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a Warning </p>
+</div>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a Note </p>
+</div>
+<hr />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is important </p>
+</div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>This is a tipp </p>
+</div>
+<h3 id="the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder">The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.<a class="headerlink" href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" title="Permanent link">#</a></h3>
+<p>In the MKDocs you define the menu. The firs page needs to be called index.md, You can call it whatever you want. The name from the mkdocs.yaml file will be set as title as long as you add in the same .md file a js file.</p>
+<p>Example the <code>index.md</code> file has at the top a snippet <code>--8&lt;-- "snippets/index.js"</code></p>
+<p>This is because we want to monitor the Github pages and since we are using agentless rum, we need to add this to each page. in the JS file we add the same name we defined in the Menu Navigation in the mkdocs.yaml file for having consistency. This way we can understand the engagement of each page, the time the users spent in each page so we can improve our trainings.</p>
+<p>As a best practice I recommend for each MD file have a JS file with the same name, and this should be reflected in the mkdocs.yaml file. </p>
+<p>Meaning before going live, after you have created all your MD files, make sure th:
+- each page.md file has a snippet/page.js file associated with it
+- the page.js file inside reflects the same name as in the mkdocs.yaml file, so RUM reflects the page the user is reading.</p>
+<h3 id="headings-in-mkdocs">Headings in MKDocs<a class="headerlink" href="#headings-in-mkdocs" title="Permanent link">#</a></h3>
+<p>if you start the md file with a snippet, automatically it'll take the name defined in the mkdocs file. You can override it by adding a Heading1 # which is only one #. For example this page is overriding the heading. As you can see there is no number 4 in the Content. All H2, H3 and so forth will be shown on the right pane for enhanced navigation and better user experience.</p>
+<h3 id="writing-live-the-mkdocs">Writing live the MKDocs<a class="headerlink" href="#writing-live-the-mkdocs" title="Permanent link">#</a></h3>
+<p>This codespace has in the <code>postCreate.sh</code> the function <code>installMkdocs</code> which installs <code>runme</code> and the <code>mkdocs</code>. This will publish automatically the mkdocs so you can see in an instant the changes. </p>
+<p>In the <code>postStart.sh</code> file the MKDocs will be exposed with the function <code>exposeMkdocs</code>. This function exposes the mkdocs in the port 8000. Before going live you should comment out both funtions for two reasons, 1.- you'll improve the rampup time of all the containers created for your session and 2.- you dont want your users to go to the local copy of the labguide but to the one in the internet so we can monitor all user interactions with your lab guide. </p>
+<p>To watch the local mkdocs just go to the terminal and see the process exposed in port 8000. </p>
+<h3 id="deploying-the-github-pages">Deploying the Github pages.<a class="headerlink" href="#deploying-the-github-pages" title="Permanent link">#</a></h3>
+<p>For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called <code>deployGhdocs</code>. Before calling it, be sure that you have commited your changes to origin/main. </p>
+<h2 id="before-going-live">Before Going Live<a class="headerlink" href="#before-going-live" title="Permanent link">#</a></h2>
+<p>As you can see, this MD file has a header-1 that is overriding the snippets/3-codespaces.js. Now, if you take it away, the header from the MKdocs.yaml file will appear. I recommend to be consistent and use the one from the MKDocs. More about this below</p>
+<p>This is the checklist to make sure everything runs smmothly</p>
 <p>More content!</p>
 <div class="grid cards">
 <ul>

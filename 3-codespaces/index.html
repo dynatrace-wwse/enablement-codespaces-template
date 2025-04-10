@@ -40,11 +40,12 @@
     
   <!-- Add scripts that need to run afterwards here -->
    Create an agentless RUM application before GoLive
-   <!-- TODO: Replace Agentless RUM Snippet
-    1. Create an agentless application in Dynatrace
-    2. Replace this snippet with your RUM Snippet
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
     <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
     -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/bf64904yne/6c910e7a6d2a6ab4_complete.js" crossorigin="anonymous"></script>
 
     
       
@@ -82,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#codespaces" class="md-skip">
+        <a href="#11-codespaces-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -317,8 +318,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -347,23 +346,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-launch-codespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Launch Codespace
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#11-codespaces-configuration" class="md-nav__link">
@@ -563,23 +551,12 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-launch-codespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Launch Codespace
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#11-codespaces-configuration" class="md-nav__link">
@@ -692,15 +669,16 @@
   
 
 
-<h1 id="codespaces">Codespaces<a class="headerlink" href="#codespaces" title="Permanent link">#</a></h1>
+  <h1>3. Codespaces</h1>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   dynatrace.sendBizEvent('page_load', {"page": "3. Codespaces"});
 });
 </script>
 
-<h2 id="1-launch-codespace">1. Launch Codespace<a class="headerlink" href="#1-launch-codespace" title="Permanent link">#</a></h2>
 <p><a href="https://codespaces.new/dynatrace-wwse/enablement-live-debugger-bug-hunting" target="_blank"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
+<p>TODO: Sizing &amp; secrets you need</p>
 <h2 id="11-codespaces-configuration">1.1 Codespaces configuration<a class="headerlink" href="#11-codespaces-configuration" title="Permanent link">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Branch, Machine sizing &amp; secrets</p>
@@ -710,7 +688,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li>Machine sizing<ul>
-<li>As a machine type select <strong>4-core</strong></li>
+<li>As a machine type select <strong>2-core</strong></li>
 </ul>
 </li>
 <li>Secrets (enter your credentials within the following variables)<ul>
@@ -724,9 +702,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="2-while-the-codespace-is-set-up-for-you-learn-powerful-usecases-for-live-debugging">2. While the Codespace is set-up for you, learn powerful usecases for Live Debugging<a class="headerlink" href="#2-while-the-codespace-is-set-up-for-you-learn-powerful-usecases-for-live-debugging" title="Permanent link">#</a></h2>
 <p>We know your time is very valuable. This codespace takes around 6 minutes to be fully operational. A local Kubernetes (<a href="https://kind.sigs.k8s.io/" target="_blank">kind</a>) cluster monitored by Dynatrace will be configured and in it a sample application, the TODO app will be deployed. To make your experience best, we are also installing and configuring tools like:</p>
 <p><strong>k9s kubectl helm node jq python3 gh</strong></p>
-<p>While the Codespace is being set up for you, <a href="https://www.dynatrace.com/news/blog/5-powerful-use-cases-beyond-debugging-for-dynatrace-live-debugger/" target="_blank">here is a 6 minute read about powerful use cases beyond live debugging</a>
-in our Dynatrace blog.</p>
-<p><img alt="Codespaces installing" src="img/codespaces_installing.png" /></p>
+<p><img alt="Codespaces installing" src="../img/codespaces_installing.png" /></p>
 <h2 id="3-explore-what-has-been-deployed">3. Explore what has been deployed<a class="headerlink" href="#3-explore-what-has-been-deployed" title="Permanent link">#</a></h2>
 <p>Your Codespace has now deployed the following resources:</p>
 <ul>
@@ -735,8 +711,8 @@ in our Dynatrace blog.</p>
   that will be used later in the demo.</p>
 </li>
 <li>
-<p>After a couple of minutes, you'll see this screen in your codespaces terminal. It contains the links to the local expose labguide and the UI of the TODO application which we will Live Debug.
-<img alt="Codespaces finish" src="img/codespaces_finish.png" /></p>
+<p>After a couple of minutes, you'll see this screen in your codespaces terminal. It contains the links to the local expose labguide and the UI of the application which we will be doing our Hands-On training.
+<img alt="Codespaces finish" src="../img/codespaces_finish.png" /></p>
 </li>
 </ul>
 <h2 id="4-tips-tricks">4. Tips &amp; Tricks<a class="headerlink" href="#4-tips-tricks" title="Permanent link">#</a></h2>
@@ -746,7 +722,7 @@ in our Dynatrace blog.</p>
 <p>You can create a new Terminal directly in VSCode, type <code>zsh</code> or call the function <code>printGreeting</code> and that will print the greeting with the most relevant information.</p>
 <h3 id="navigating-in-your-local-kubernetes">Navigating in your local Kubernetes<a class="headerlink" href="#navigating-in-your-local-kubernetes" title="Permanent link">#</a></h3>
 <p>The client <code>kubectl</code> and <code>k9s</code>are configured so you can navigate in your local Kubernetes like butter. 
-<img alt="k9s" src="img/k9s.png" /></p>
+<img alt="k9s" src="../img/k9s.png" /></p>
 <h3 id="exposing-the-apps-to-the-public">Exposing the apps to the public<a class="headerlink" href="#exposing-the-apps-to-the-public" title="Permanent link">#</a></h3>
 <p>The apps MKdocs and TODO app are being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.</p>
 <h2 id="5-troubleshooting">5. Troubleshooting<a class="headerlink" href="#5-troubleshooting" title="Permanent link">#</a></h2>
