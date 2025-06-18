@@ -15,14 +15,14 @@ installK9s
 installMkdocs
 
 # Dynatrace Credentials are read and saved as a configmap for ease of use
-#dynatraceEvalReadSaveCredentials
+dynatraceEvalReadSaveCredentials
 
 # Dynatrace Operator can be deployed automatically
 #dynatraceDeployOperator
 
 # You can deploy CNFS or AppOnly
 #deployCloudNative
-#deployApplicationMonitoring
+deployApplicationMonitoring
 
 # In here you deploy the Application you want
 # The TODO App will be deployed as a sample
