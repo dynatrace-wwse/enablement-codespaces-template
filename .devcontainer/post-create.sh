@@ -18,7 +18,7 @@ installMkdocs
 dynatraceEvalReadSaveCredentials
 
 # Dynatrace Operator can be deployed automatically
-#dynatraceDeployOperator
+dynatraceDeployOperator
 
 # You can deploy CNFS or AppOnly
 #deployCloudNative
