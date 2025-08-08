@@ -43,10 +43,6 @@
 	"hostRequirements": {
 		"cpus": 2
 	}
-  ,
-  "remoteEnv": {
-    "RepositoryName": "enablement-codespaces-template"
-  }
   /*
   ,
   // Add recommended secrets 
