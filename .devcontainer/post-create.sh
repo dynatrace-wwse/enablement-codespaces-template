@@ -12,10 +12,9 @@ startKindCluster
 installK9s
 
 #TODO: BeforeGoLive: uncomment this. This is only needed for professors to have the Mkdocs live in the container
-installMkdocs
 
-# Dynatrace Credentials are read and saved as a configmap for ease of use
-#dynatraceEvalReadSaveCredentials
+#installMkdocs
+
 
 # Dynatrace Operator can be deployed automatically
 #dynatraceDeployOperator
