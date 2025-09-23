@@ -1,8 +1,9 @@
 --8<-- "snippets/3-codespaces.js"
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace-wwse/enablement-live-debugger-bug-hunting){target="_blank"}
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace-wwse/enablement-codespaces-template){target="_blank"}
 
-TODO: Sizing & secrets you need
+TODO: Sizing & secrets you need ( Below is a sample)
+
 ## 1.1 Codespaces configuration
 !!! tip "Branch, Machine sizing & secrets"
     - Branch

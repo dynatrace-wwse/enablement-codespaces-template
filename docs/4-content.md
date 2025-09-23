@@ -101,8 +101,13 @@ Make sure that there is no warning in there, if there is a warning is because mo
 
 
 ### Deploying the Github pages.
-For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called `deployGhdocs`. Before calling it, be sure that you have commited your changes to origin/main. 
+For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called `deployGhdocs`. Before calling it, be sure that you have commited your changes to the branch you are working on.
 
+### Automatic deployment of the Github pages.
+There is a gitHub workflow that when a Pull Request is merged into main, automatically the changes in the `doc` folder and all the documentation as specified in MKdocs, will be automatically published into the github pages and is served from the branch `ghpages`.
+
+### Protection of the Main Branch
+The main branch is protected, no pushes can be done directly to the main branch. For adding features or changes to a repo first create a branch, something like `rfe/feature1` or `fix/docs` so from the naming users can understand what the change is about. Then create a Pull Request. When a Pull Request is created, integration tests will run. If the test run succesfully, then the merge can be done. We recommend to delete the branch after is merged so we keep the repo as clean as possible. 
 
 ## Adding apps and instantiating apps in CS
 The architecture is done in a way that will help us troubleshoot issues faster and has a good separation of concerns. All the logic is found in the `functions.sh` file. So the best is to add the deployment of the app in there and then reference it in the `postCreate.sh` or `postStart.sh` file. 
