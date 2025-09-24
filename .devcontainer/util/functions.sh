@@ -394,7 +394,6 @@ alias pg='ps -aux | grep'
 }
 
 installRunme() {
-  #FIXME: Runme with AMD ARM
   mkdir runme_binary
   if [[ "$ARCH" == "x86_64" ]]; then
     printInfoSection "Installing Runme Version $RUNME_CLI_VERSION for AMD/x86"
@@ -963,8 +962,9 @@ installMkdocs(){
 
 
 exposeMkdocs(){
-  printInfo "Exposing Mkdocs in your dev.container"
-  nohup mkdocs serve -a 0.0.0.0:8000 > /dev/null 2>&1 &
+  printInfo "Exposing Mkdocs in your dev.container in port 8000 & running in the background, type 'jobs' to show the process."
+    nohup mkdocs serve --dev-addr=0.0.0.0:8000 --watch-theme --dirtyreload --livereload > /dev/null 2>&1 &
+
 }
 
 

@@ -2,9 +2,11 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace-wwse/enablement-codespaces-template){target="_blank"}
 
-TODO: Sizing & secrets you need ( Below is a sample)
+TODO: Add the sizing & secrets needed.
 
-## 1.1 Codespaces configuration
+--8<-- "snippets/dt-enablement.md"
+
+## 1. Codespaces configuration
 !!! tip "Branch, Machine sizing & secrets"
     - Branch
         - select the **main** branch
@@ -43,12 +45,17 @@ In the terminal, there are functions loaded for your convenience. By creating a 
 
 You can create a new Terminal directly in VSCode, type `zsh` or call the function `printGreeting` and that will print the greeting with the most relevant information.
 
+### Make your trainigs interactive
+All functions writen in the `functions.sh` file can be called in the terminal. Also the custom ones written in `my_functions.sh` file. For example there is a custom function as an example called `customFunction`. Type it in the terminal and see the output.
+![custom function](img/custom_function.png)
+
+
 ### Navigating in your local Kubernetes
 The client `kubectl` and `k9s`are configured so you can navigate in your local Kubernetes like butter. 
 ![k9s](img/k9s.png)
 
 ### Exposing the apps to the public
-The apps MKdocs and TODO app are being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.
+The TODO app is being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.
 
 
 ## 5. Troubleshooting
