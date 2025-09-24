@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#11-codespaces-configuration" class="md-skip">
+        <a href="#1-codespaces-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -353,9 +353,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-codespaces-configuration" class="md-nav__link">
+  <a href="#1-codespaces-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 Codespaces configuration
+      1. Codespaces configuration
     </span>
   </a>
   
@@ -393,6 +393,15 @@
   <a href="#show-the-greeting" class="md-nav__link">
     <span class="md-ellipsis">
       Show the greeting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-your-trainigs-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make your trainigs interactive
     </span>
   </a>
   
@@ -567,9 +576,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-codespaces-configuration" class="md-nav__link">
+  <a href="#1-codespaces-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 Codespaces configuration
+      1. Codespaces configuration
     </span>
   </a>
   
@@ -607,6 +616,15 @@
   <a href="#show-the-greeting" class="md-nav__link">
     <span class="md-ellipsis">
       Show the greeting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-your-trainigs-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make your trainigs interactive
     </span>
   </a>
   
@@ -694,9 +712,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<p><a href="https://codespaces.new/dynatrace-wwse/enablement-live-debugger-bug-hunting" target="_blank"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
-<p>TODO: Sizing &amp; secrets you need</p>
-<h2 id="11-codespaces-configuration">1.1 Codespaces configuration<a class="headerlink" href="#11-codespaces-configuration" title="Permanent link">#</a></h2>
+<p><a href="https://codespaces.new/dynatrace-wwse/enablement-codespaces-template" target="_blank"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
+<p>TODO: Add the sizing &amp; secrets needed.</p>
+<details class="example">
+<summary><a href="https://dynatrace-wwse.github.io/codespaces-synchronizer"><img alt="dt-badge" src="https://img.shields.io/badge/powered_by-DT_enablement-8A2BE2?logo=dynatrace" /></a></summary>
+<p>This codespace is powered by the Dynatrace Enablement Framework, this means that this codespace:</p>
+<ul>
+<li>can run in github codespaces, as a remote container or locally as docker container</li>
+<li>is crosscompiled for AMD and ARM architectures</li>
+<li>follows a set of standards and best practices for enhancing the user experience</li>
+</ul>
+<p>Want to learn more about it? We invite you to read <a href="https://dynatrace-wwse.github.io/codespaces-synchronizer">this documentation</a></p>
+</details>
+<h2 id="1-codespaces-configuration">1. Codespaces configuration<a class="headerlink" href="#1-codespaces-configuration" title="Permanent link">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Branch, Machine sizing &amp; secrets</p>
 <ul>
@@ -737,11 +765,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="show-the-greeting">Show the greeting<a class="headerlink" href="#show-the-greeting" title="Permanent link">#</a></h3>
 <p>In the terminal, there are functions loaded for your convenience. By creating a new Terminal the Greeting will be shown that includes the links to the exposed apps, the Github  pages, the Github Repository, the Dynatrace Tenant that is bound to this devcontainer and some of the tools installed.</p>
 <p>You can create a new Terminal directly in VSCode, type <code>zsh</code> or call the function <code>printGreeting</code> and that will print the greeting with the most relevant information.</p>
+<h3 id="make-your-trainigs-interactive">Make your trainigs interactive<a class="headerlink" href="#make-your-trainigs-interactive" title="Permanent link">#</a></h3>
+<p>All functions writen in the <code>functions.sh</code> file can be called in the terminal. Also the custom ones written in <code>my_functions.sh</code> file. For example there is a custom function as an example called <code>customFunction</code>. Type it in the terminal and see the output.
+<img alt="custom function" src="../img/custom_function.png" /></p>
 <h3 id="navigating-in-your-local-kubernetes">Navigating in your local Kubernetes<a class="headerlink" href="#navigating-in-your-local-kubernetes" title="Permanent link">#</a></h3>
 <p>The client <code>kubectl</code> and <code>k9s</code>are configured so you can navigate in your local Kubernetes like butter. 
 <img alt="k9s" src="../img/k9s.png" /></p>
 <h3 id="exposing-the-apps-to-the-public">Exposing the apps to the public<a class="headerlink" href="#exposing-the-apps-to-the-public" title="Permanent link">#</a></h3>
-<p>The apps MKdocs and TODO app are being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.</p>
+<p>The TODO app is being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.</p>
 <h2 id="5-troubleshooting">5. Troubleshooting<a class="headerlink" href="#5-troubleshooting" title="Permanent link">#</a></h2>
 <h3 id="exposing-the-app">Exposing the App<a class="headerlink" href="#exposing-the-app" title="Permanent link">#</a></h3>
 <p>The todoApp is already exposed via NodePort in the port 30100, if you want to expose it in another port like the one defined 8080 in the service, then type and to expose the TODO app, type <code>exposeTodoApp</code>, </p>
