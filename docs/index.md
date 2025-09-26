@@ -2,24 +2,22 @@
 
 --8<-- "snippets/disclaimer.md"
 
-## What's this tutorial all about
-In this tutorial we'll learn:
+## How to to use this template?
+This is a template which will guide you on creating your own Hands-On training. 
+Within this tutorial you'll learn the basics how the codespaces work and how the documentation works, so you can build your own Hands-On training in no time.
 
-- how this codespace is being built
-- how is the separation of concerns of the architecture in this devcontainer
-- the functions.sh file
-- create Github documentation and publish it
-- How MKDocs work
-- monitor the Github documentation
-- monitor the instatiation of codespaces (learn about the usage of a specific enablement)
-- exposing ports
-- tipp & tricks
-- troubleshooting
+- Prerequisites 
+- Setting up the professors environment
+- Writing the documentation
+- How MkDocs work
+- How to write your own functions
+- Create Github documentation and publish it
+- Tipp & tricks
+- Troubleshooting
 
 <p align="center">
   <img src="img/dt_professors.png" alt="Professors" width="200">
 </p>
-
 
 !!! tip "What will we do"
     In this tutorial we will learn how easy it is to create an enablement using codespaces and a Kubernetes cluster!

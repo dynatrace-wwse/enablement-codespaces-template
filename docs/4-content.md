@@ -1,5 +1,9 @@
-# Content
 --8<-- "snippets/4-content.js"
+
+## The Dynatrace Codespaces Enablement Framework
+For understanding deeply how the framework works, how to run it locally, the different types of instantiations, integration tests, github actions and more, please read the following documentation: 
+[https://dynatrace-wwse.github.io/codespaces-synchronizer](https://dynatrace-wwse.github.io/codespaces-synchronizer)
+
 
 ## Enablement content
 
@@ -48,15 +52,16 @@ This are the available admonitions added with a snippet:
 --8<-- "snippets/admonitions.md"
 
 ### The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
-In the MKDocs you define the menu. The firs page needs to be called index.md, You can call it whatever you want. The name from the mkdocs.yaml file will be set as title as long as you add in the same .md file a js file.
+The menu on the left hand side is defined in `mkdocs.yaml`. The first page needs to be called index.md, You can call it whatever you want, in our case we call it About. The name from the mkdocs.yaml file will be set as title as long as you add in the same .md file a js file.
 
 Example the ```index.md``` file has at the top a snippet ```--8<-- "snippets/index.js"```
 
-This is because we want to monitor the Github pages and since we are using agentless rum, we need to add this to each page. in the JS file we add the same name we defined in the Menu Navigation in the mkdocs.yaml file for having consistency. This way we can understand the engagement of each page, the time the users spent in each page so we can improve our trainings.
+!!! warning "Important"
+    This is because we want to monitor the usage and adoption of the Github pages of your training and since we are using agentless rum, we need to add this to each page. in the JS file we add the same name we defined in the Menu Navigation in the mkdocs.yaml file for having consistency. This way we can understand the engagement of each page, the time the users spent in each page so we can improve our trainings.
 
-As a best practice I recommend for each MD file have a JS file with the same name, and this should be reflected in the mkdocs.yaml file. 
+As a best practice we recommend for each MD file have a JS file with the same name, and this should be reflected in the mkdocs.yaml file. 
 
-Meaning before going live, after you have created all your MD files, make sure th:
+Meaning before going live, after you have created all your MD files, make sure that:
 - each page.md file has a snippet/page.js file associated with it
 - the page.js file inside reflects the same name as in the mkdocs.yaml file, so RUM reflects the page the user is reading.
 
@@ -65,12 +70,18 @@ if you start the md file with a snippet, automatically it'll take the name defin
 
 
 ### Writing live the MKDocs
-This codespace has in the `postCreate.sh` the function `installMkdocs` which installs `runme` and the `mkdocs`. This will publish automatically the mkdocs so you can see in an instant the changes. 
+This codespace has in the `post-create.sh` the function `installMkdocs` which installs `runme` and the `mkdocs` and will expose any changes live in port 8000. The function `exposeMkdocs` will publish automatically the mkdocs so you can see in an instant the changes. 
+Before going live you should comment out the function from the `post-create.sh` file for two reasons:
 
-In the `postStart.sh` file the MKDocs will be exposed with the function `exposeMkdocs`. This function exposes the mkdocs in the port 8000. Before going live you should comment out both funtions for two reasons, 1.- you'll improve the rampup time of all the containers created for your session and 2.- you dont want your users to go to the local copy of the labguide but to the one in the internet so we can monitor all user interactions with your lab guide. 
+1.- you'll improve the rampup time of all the containers created for your session and 
+
+2.- you dont want your users to go to the local copy of the labguide but to the one in the internet so we can monitor all user interactions with your lab guide. 
 
 To watch the local mkdocs just go to the terminal and see the process exposed in port 8000.
 
+
+### Deploying the Github pages.
+For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called `deployGhdocs`. Before calling it, be sure that you have commited your changes to the branch you are working on.
 When you call it it should look something like this:
 
 ```bash
@@ -99,36 +110,26 @@ INFO    -  Your documentation should shortly be available at: https://dynatrace-
 
 Make sure that there is no warning in there, if there is a warning is because most likely you are referencing a page or an image that is missing or wrong.
 
+### Automatic deployment of the Github pages.
+There is a gitHub workflow that when a Pull Request is merged into main, automatically the changes in the `doc` folder and all the documentation as specified in MKdocs, will be automatically published into the github pages and is served from the branch `ghpages`.
 
-### Deploying the Github pages.
-For this you'll need write access to the repo where the enablement is being hosted. There is a function loaded in the shell called `deployGhdocs`. Before calling it, be sure that you have commited your changes to origin/main. 
+### Protection of the Main Branch
+The main branch is protected, no pushes can be done directly to the main branch. For adding features or changes to a repo first create a branch, something like `rfe/feature1` or `fix/docs` so from the naming users can understand what the change is about. Then create a Pull Request. When a Pull Request is created, integration tests will run. If the test run succesfully, then the merge can be done. We recommend to delete the branch after is merged so we keep the repo as clean as possible. 
 
-
-## Adding apps and instantiating apps in CS
-The architecture is done in a way that will help us troubleshoot issues faster and has a good separation of concerns. All the logic is found in the `functions.sh` file. So the best is to add the deployment of the app in there and then reference it in the `postCreate.sh` or `postStart.sh` file. 
+## Adding apps and instantiating apps in your codespace
+The architecture is done in a way that will help us troubleshoot issues faster and has a good separation of concerns. All the logic is found in the `functions.sh` file. So the best is to add the deployment of the app in there and then reference it in the `post-create.sh` or `post-start.sh` file. 
 
 Now, the terminal loads this functions as well, this gives you the possibility to have interactive trainings. Let's say that you want to add an error, or block a firewall, anything, well you can add it in a function that the user can call `startTraining` or whatever we want to do. 
 
-<!--FIXME: Explanation in-here -->
-
-
-## The greeting
-The cool Dynatrace message is nothing else but echos in a function which are loaded in the user shell, in this case we are using an image with `zsh`. If you want to modify the greeting, this file is under ```.devcontainer/greeting.sh````
-
-Just by typing `zsh` a new terminal is created and you'll see your changes. Be aware that we want to keep consistency in all trainings, so don't change the template too much.
-
-
 
 ## Before Going Live
-
 Make sure to install the plugin Todo Tree. This is a great plugin for tracking TODOs in repositories. I've added a couple of TODOs that you'll need to take care before going live. 
 
 
+## Enhancing the Codespace template
+For enhancing the documentation just create a Fork of this repo and add a PR.
 
-## Enhancing the CS template
-Multiple ways to collaborate:
-- You can create a Fork and add a PR. 
-- Add an issue directly in the Github repository. I have tons of enhancements in my head, but you can help me prioritize them so your work is more effective. Let's work together.
+If you want to change core files of the framework like in the `functions.sh` file or adding more apps, please create a [fork](https://github.com/dynatrace-wwse/codespaces-synchronizer/fork) in the [codespaces-synchronizer](https://github.com/dynatrace-wwse/codespaces-synchronizer/fork) repository which is the one synchronizing all repositories using the framework.
 
 
 <div class="grid cards" markdown>
