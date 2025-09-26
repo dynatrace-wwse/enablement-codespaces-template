@@ -1,10 +1,12 @@
 --8<-- "snippets/3-codespaces.js"
 
+--8<-- "snippets/dt-enablement.md"
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace-wwse/enablement-codespaces-template){target="_blank"}
 
 TODO: Add the sizing & secrets needed.
 
---8<-- "snippets/dt-enablement.md"
+
 
 ## 1. Codespaces configuration
 !!! tip "Branch, Machine sizing & secrets"
