@@ -2,7 +2,7 @@
 
 ## The Dynatrace Codespaces Enablement Framework
 For understanding deeply how the framework works, how to run it locally, the different types of instantiations, integration tests, github actions and more, please read the following documentation: 
-[https://dynatrace-wwse.github.io/codespaces-synchronizer](https://dynatrace-wwse.github.io/codespaces-synchronizer)
+[https://dynatrace-wwse.github.io/codespaces-framework](https://dynatrace-wwse.github.io/codespaces-framework)
 
 
 ## Enablement content
