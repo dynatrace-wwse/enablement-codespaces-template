@@ -13,4 +13,4 @@ printInfoSection "Running integration Tests for $RepositoryName"
 
 assertRunningPod todoapp todoapp
 
-assertRunningApp 30100
+assertRunningApp todoapp
