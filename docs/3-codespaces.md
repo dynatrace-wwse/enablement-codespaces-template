@@ -21,7 +21,7 @@ TODO: Add the sizing & secrets needed.
 
 
 ## 2. While the Codespace is set-up for you, learn powerful usecases with Dynatrace
-We know your time is very valuable. This codespace takes around 6 minutes to be fully operational. A local Kubernetes ([kind](https://kind.sigs.k8s.io/){target="_blank"}) cluster monitored by Dynatrace will be configured and in it a sample application, the TODO app will be deployed. To make your experience best, we are also installing and configuring tools like:
+We know your time is very valuable. This codespace takes around 6 minutes to be fully operational. A local Kubernetes ([k3d](https://k3d.io/){target="_blank"}) cluster monitored by Dynatrace will be configured and in it a sample application, the TODO app will be deployed. To make your experience best, we are also installing and configuring tools like:
 
 **k9s kubectl helm node jq python3 gh**
 
@@ -31,7 +31,7 @@ We know your time is very valuable. This codespace takes around 6 minutes to be 
 
 Your Codespace has now deployed the following resources:
 
-- A local Kubernetes ([kind](https://kind.sigs.k8s.io/){target="_blank"}) cluster monitored by Dynatrace, with some pre-deployed apps
+- A local Kubernetes ([k3d](https://k3d.io/){target="_blank"}) cluster monitored by Dynatrace, with some pre-deployed apps
   that will be used later in the demo.
 
 - After a couple of minutes, you'll see this screen in your codespaces terminal. It contains the links to the local expose labguide and the UI of the application which we will be doing our Hands-On training.
@@ -65,7 +65,9 @@ The TODO app is being exposed in the devcontainer to your localhost. If you want
 
 ### Exposing the App
 
-The todoApp is already exposed via NodePort in the port 30100, if you want to expose it in another port like the one defined 8080 in the service, then type and to expose the TODO app, type `exposeTodoApp`, 
+Apps are automatically registered with the nginx ingress controller and accessible via a magic-DNS URL. Run `printGreeting` in the terminal to see all app URLs.
+
+If you need to manually expose the TODO app via port-forward, type `exposeTodoApp`:
 
 ```bash
 exposeTodoApp(){
