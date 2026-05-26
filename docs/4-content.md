@@ -1,4 +1,3 @@
---8<-- "snippets/4-content.js"
 
 ## The Dynatrace Codespaces Enablement Framework
 For understanding deeply how the framework works, how to run it locally, the different types of instantiations, integration tests, github actions and more, please read the following documentation: 
@@ -51,20 +50,11 @@ This are the available admonitions added with a snippet:
 
 --8<-- "snippets/admonitions.md"
 
-### The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
-The menu on the left hand side is defined in `mkdocs.yaml`. The first page needs to be called index.md, You can call it whatever you want, in our case we call it About. The name from the mkdocs.yaml file will be set as title as long as you add in the same .md file a js file.
+### Page tracking with RUM (BizEvents)
 
-Example the ```index.md``` file has at the top a snippet ```--8<-- "snippets/index.js"```
+Page load events are automatically tracked for every page. The framework`s `docs/overrides/main.html` loads the RUM agent from the `extra.rum_snippet` URL in `mkdocs.yaml`, then fires a `page_load` BizEvent using the page title defined in the `nav` section.
 
-!!! warning "Important"
-    This is because we want to monitor the usage and adoption of the Github pages of your training and since we are using agentless rum, we need to add this to each page. in the JS file we add the same name we defined in the Menu Navigation in the mkdocs.yaml file for having consistency. This way we can understand the engagement of each page, the time the users spent in each page so we can improve our trainings.
-
-As a best practice we recommend for each MD file have a JS file with the same name, and this should be reflected in the mkdocs.yaml file. 
-
-Meaning before going live, after you have created all your MD files, make sure that:
-- each page.md file has a snippet/page.js file associated with it
-- the page.js file inside reflects the same name as in the mkdocs.yaml file, so RUM reflects the page the user is reading.
-
+No per-page JavaScript files are needed. Define your page titles accurately in the `nav` of `mkdocs.yaml` — RUM tracking follows automatically.
 ### Headings in MKDocs
 if you start the md file with a snippet, automatically it'll take the name defined in the mkdocs file. You can override it by adding a Heading1 # which is only one #. For example this page is overriding the heading. As you can see there is no number 4 in the Content. All H2, H3 and so forth will be shown on the right pane for enhanced navigation and better user experience.
 
