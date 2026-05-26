@@ -422,9 +422,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" class="md-nav__link">
+  <a href="#page-tracking-with-rum-bizevents" class="md-nav__link">
     <span class="md-ellipsis">
-      The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
+      Page tracking with RUM (BizEvents)
     </span>
   </a>
   
@@ -655,9 +655,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" class="md-nav__link">
+  <a href="#page-tracking-with-rum-bizevents" class="md-nav__link">
     <span class="md-ellipsis">
-      The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.
+      Page tracking with RUM (BizEvents)
     </span>
   </a>
   
@@ -760,12 +760,6 @@
 
   <h1>4. Content</h1>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  dynatrace.sendBizEvent('page_load', {"page": "4. Content"});
-});
-</script>
-
 <h2 id="the-dynatrace-codespaces-enablement-framework">The Dynatrace Codespaces Enablement Framework<a class="headerlink" href="#the-dynatrace-codespaces-enablement-framework" title="Permanent link">#</a></h2>
 <p>For understanding deeply how the framework works, how to run it locally, the different types of instantiations, integration tests, github actions and more, please read the following documentation: 
 <a href="https://dynatrace-wwse.github.io/codespaces-framework">https://dynatrace-wwse.github.io/codespaces-framework</a></p>
@@ -851,17 +845,9 @@ looks like:</p>
 <summary>This is a bug and is collapsable</summary>
 <p>This is a bug</p>
 </details>
-<h3 id="the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder">The relation between the mkdocs.yaml file, the md files and the javascript files (BizEvents) in the snippets folder.<a class="headerlink" href="#the-relation-between-the-mkdocsyaml-file-the-md-files-and-the-javascript-files-bizevents-in-the-snippets-folder" title="Permanent link">#</a></h3>
-<p>The menu on the left hand side is defined in <code>mkdocs.yaml</code>. The first page needs to be called index.md, You can call it whatever you want, in our case we call it About. The name from the mkdocs.yaml file will be set as title as long as you add in the same .md file a js file.</p>
-<p>Example the <code>index.md</code> file has at the top a snippet <code>--8&lt;-- "snippets/index.js"</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>This is because we want to monitor the usage and adoption of the Github pages of your training and since we are using agentless rum, we need to add this to each page. in the JS file we add the same name we defined in the Menu Navigation in the mkdocs.yaml file for having consistency. This way we can understand the engagement of each page, the time the users spent in each page so we can improve our trainings.</p>
-</div>
-<p>As a best practice we recommend for each MD file have a JS file with the same name, and this should be reflected in the mkdocs.yaml file. </p>
-<p>Meaning before going live, after you have created all your MD files, make sure that:
-- each page.md file has a snippet/page.js file associated with it
-- the page.js file inside reflects the same name as in the mkdocs.yaml file, so RUM reflects the page the user is reading.</p>
+<h3 id="page-tracking-with-rum-bizevents">Page tracking with RUM (BizEvents)<a class="headerlink" href="#page-tracking-with-rum-bizevents" title="Permanent link">#</a></h3>
+<p>Page load events are automatically tracked for every page. The framework<code>s</code>docs/overrides/main.html<code>loads the RUM agent from the</code>extra.rum_snippet<code>URL in</code>mkdocs.yaml<code>, then fires a</code>page_load<code>BizEvent using the page title defined in the</code>nav` section.</p>
+<p>No per-page JavaScript files are needed. Define your page titles accurately in the <code>nav</code> of <code>mkdocs.yaml</code> — RUM tracking follows automatically.</p>
 <h3 id="headings-in-mkdocs">Headings in MKDocs<a class="headerlink" href="#headings-in-mkdocs" title="Permanent link">#</a></h3>
 <p>if you start the md file with a snippet, automatically it'll take the name defined in the mkdocs file. You can override it by adding a Heading1 # which is only one #. For example this page is overriding the heading. As you can see there is no number 4 in the Content. All H2, H3 and so forth will be shown on the right pane for enhanced navigation and better user experience.</p>
 <h3 id="writing-live-the-mkdocs">Writing live the MKDocs<a class="headerlink" href="#writing-live-the-mkdocs" title="Permanent link">#</a></h3>
@@ -1009,8 +995,19 @@ When you call it it should look something like this:</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
+  
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof dynatrace !== 'undefined') {
+        dynatrace.sendBizEvent('page_load', {'page': "4. Content"});
+      }
+    });
+  </script>
+  
+
   </body>
 </html>
